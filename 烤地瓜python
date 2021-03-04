@@ -1,0 +1,26 @@
+class Sweetpotato:
+    def __init__(self):
+        self.cooktimetolal=0
+        self.cookStr='生的'
+    def __str__(self):
+        msg='烤了%d分钟，地瓜的状态是'%self.cooktimetolal+self.cookStr
+        return msg
+    def cook(self,time):
+        self.cooktimetolal+=time
+        #self.cooktimetolal=self.cooktimetolal+time
+        if self.cooktimetolal>8:
+            self.cookStr='烤成灰的'
+        elif self.cooktimetolal>5:
+            self.cookStr='烤熟的'      
+        elif self.cooktimetolal>3:
+            self.cookStr='半生不熟的'      
+        else:
+            self.cookStr='生的' 
+            
+Sweet=Sweetpotato()
+cook_time=int(input('请输入烤地瓜的时间'))
+Sweet.cook(cook_time)
+print(Sweet)
+cook_time=int(input('请输入又继续烤的时间'))
+Sweet.cook(cook_time)
+print(Sweet)
